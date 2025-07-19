@@ -9,7 +9,7 @@ import numpy as np
 import torch
 from PIL import Image
 
-from raft import RAFT
+from ps3d import PS3D
 from utils import flow_viz
 from utils.utils import InputPadder
 
@@ -40,7 +40,7 @@ def viz(img, flo):
 
 
 def demo(args):
-    model = torch.nn.DataParallel(RAFT(args))
+    model = torch.nn.DataParallel(PS3D(args))
     model.load_state_dict(torch.load(args.model))
 
     model = model.module
