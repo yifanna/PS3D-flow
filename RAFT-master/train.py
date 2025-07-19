@@ -15,7 +15,7 @@ import torch.optim as optim
 import torch.nn.functional as F
 
 from torch.utils.data import DataLoader
-from core.raft_shijie import RAFT
+from core.ps3d_shijie import PS3D
 import evaluate
 #import datasets
 import core.datasets
@@ -136,7 +136,7 @@ class Logger:
 
 def train(args):
 
-    model = nn.DataParallel(RAFT(args), device_ids=args.gpus)
+    model = nn.DataParallel(PS3D(args), device_ids=args.gpus)
     print("Parameter Count: %d" % count_parameters(model))
 
     if args.restore_ckpt is not None:
@@ -219,7 +219,7 @@ def train(args):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--name', default='raft', help="name your experiment")
+    parser.add_argument('--name', default='ps3d', help="name your experiment")
     parser.add_argument('--stage', help="determines which dataset to use for training") 
     parser.add_argument('--restore_ckpt', help="restore checkpoint")
     parser.add_argument('--small', action='store_true', help='use small model')
