@@ -20,7 +20,7 @@ from utils import frame_utils
 
 
 
-from core.raft_shijie import RAFT
+from core.ps3d_shijie import PS3D
 from core.utils.utils import InputPadder, forward_interpolate
 
 
@@ -201,7 +201,7 @@ if __name__ == '__main__':
     parser.add_argument('--image_size', type=int, nargs='+', default=[384, 512])
     args = parser.parse_args()
 
-    model = torch.nn.DataParallel(RAFT(args))
+    model = torch.nn.DataParallel(PS3D(args))
     # model.load_state_dict(torch.load(args.model))
     model.load_state_dict(torch.load(args.model, map_location='cpu'))
 
