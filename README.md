@@ -1,4 +1,4 @@
-# RAFT
+# PS3D
 This repository contains the source code for our paper:
 
 [Enhanced Optical Flow Estimation via  bMultiscale Kernel Selection and Super-Resolution Integration]<br/>
@@ -15,7 +15,7 @@ conda install pytorch=1.6.0 torchvision=0.7.0 cudatoolkit=10.1 matplotlib tensor
 ```
 
 ## Required Data
-To evaluate/train RAFT, you will need to download the required datasets. 
+To evaluate/train PS3D, you will need to download the required datasets. 
 * [FlyingChairs](https://lmb.informatik.uni-freiburg.de/resources/datasets/FlyingChairs.en.html#flyingchairs)
 * [FlyingThings3D](https://lmb.informatik.uni-freiburg.de/resources/datasets/SceneFlowDatasets.en.html)
 * [Sintel](http://sintel.is.tue.mpg.de/)
@@ -45,7 +45,7 @@ By default `datasets.py` will search for the datasets in these locations. You ca
 ## Evaluation
 You can evaluate a trained model using `evaluate.py`
 ```Shell
-python evaluate.py --model=models/raft-things.pth --dataset=sintel --mixed_precision
+python evaluate.py --model=models/PS3D-things.pth --dataset=sintel --mixed_precision
 ```
 
 ## Training
